@@ -65,15 +65,6 @@ public class AstarSolver extends Solver {
 			Queue<Action> actions = getPossibleActions(currentState, currentState.getPlayer());
 			
 
-			//update per depth statistics
-			if(statMode){
-			    Integer d = new Integer(currentEstimate.getStepValue());
-			    Integer stateCount = stateGrowth.get(d);
-			    
-			    if ( stateCount == null || stateCount.intValue() < (exploredStates.size()+unexploredStates.size())){
-				stateGrowth.put(d, new Integer(exploredStates.size()+unexploredStates.size()));
-			    }
-			}
 			if(doPrint){
 				if(currentEstimate.getStepValue() > depth){
 					depth = currentEstimate.getStepValue(); 
@@ -117,7 +108,17 @@ public class AstarSolver extends Solver {
 					}
 					
 					if(updateSolution){
-						solution.remove(newState);
+					    //update per depth statistics
+					    if(statMode){
+
+						Integer stateCount = stateGrowth.get(newStep);
+						
+						if ( stateCount == null || stateCount.intValue() < (exploredStates.size()+unexploredStates.size())){
+						    stateGrowth.put(new Integer(newStep), new Integer(exploredStates.size()+unexploredStates.size()));
+						}
+					    }
+
+					    solution.remove(newState);
 						solution.put(newState, new ActionResult(newState, action, currentState));
 					}
 					

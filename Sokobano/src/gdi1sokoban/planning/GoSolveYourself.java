@@ -115,7 +115,7 @@ public class GoSolveYourself {
 		h9.add(new Box4x4Heuristic(b));
 		
 
-		boolean[] run = {true, false, false, false, false, true, true, true, true, false};
+		boolean[] run = {true, true, true, true, true, true, true, true, true, true};
 		Solver[] solvers = {new BFSolver(new Board(l.getBoard())),
 		                    new AstarSolver(new Board(l.getBoard()), new SubGoalIndependence(b)),
 		                    new AstarSolver(new Board(l.getBoard()), new CornerHeuristic(b)),
@@ -219,7 +219,7 @@ public class GoSolveYourself {
 		    Collections.sort(depthList);
 		    System.out.println(header);
 		    for ( Integer i : depthList ){
-			System.out.println(String.format("%8d ",i.intValue()+1) + totalGrowth.get(i));
+			System.out.println(String.format("%8d ",i.intValue()) + totalGrowth.get(i));
 		    }
 
 		}

@@ -7,7 +7,7 @@ for i in $*; do
     echo $name
 
     echo "" > $gpf
-    echo set terminal postscript color >> $gpf
+    echo set terminal postscript >> $gpf
     echo set xlabel \"Depth\" >> $gpf
     echo set ylabel \"States\" >> $gpf
     echo set title \"$name\" >> $gpf

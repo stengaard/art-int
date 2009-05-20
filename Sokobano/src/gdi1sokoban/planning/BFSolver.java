@@ -58,7 +58,7 @@ public class BFSolver extends Solver {
 			} else {
 			}
 			if(statMode){
-			    int  depth =discoveredStates.get(currentState).intValue()+1;
+			    int  depth =discoveredStates.get(currentState).intValue();
 			    Integer d = new Integer(depth);
 			    int stateSize = (discoveredStates.size());
 			    if ( stateGrowth.get(d) == null || stateGrowth.get(d).intValue() <  
