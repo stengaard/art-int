@@ -1,0 +1,34 @@
+\section{State Space Growth}
+As described above we will now examine the characteristics of the
+statespace growth for the different heuristics and try to use this as
+an indicator for good heuristic over bad heuristics.
+
+Appendix \ref{app:results} clearly show that some heuristics are
+better than others. It is also clear from Appendix \ref{app:results}
+that the Breadt First search algorithm simply has to high a branching
+factor, therefore it cannot be used for anything serious. When we
+include it in the following it is because it has one nice property: We
+are guaranteed to get the shortest path when we get a path. It will,
+however, most often simply time-out.
+
+As for the general heuristic (independent subgoals) this does not fare
+much better, as an example we refer to Figure \ref{fig:level32-stats}
+on page \pageref{fig:level32-stats}, where it can be seen this
+heuristic rises at the same rate as the Breadth First algorithm.
+
+It can also be seen from Appendix \ref{app:results} that the
+randomised heuristic is not very effective and that adding deadlock
+detection to the subgoal independence heuristic does \emph{somewhat}
+improve its state space growth (i.e. make it more determined).
+
+In the following we will only consider these four heuristics:
+
+\begin{itemize}
+\item $A(+\{*\{i,i\},c,4\})$
+\item $A(+\{*\{s,s\},c,4\})$
+\item $A(+\{*\{B,B,s,s\},c,4\})$
+\item $A(+\{*\{B,B,a,a\},c,4\})$
+\end{itemize}
+
+$BFSolver$ will also be considered, but only to provide information on
+the shortestpath, \emph{not} for performance.
