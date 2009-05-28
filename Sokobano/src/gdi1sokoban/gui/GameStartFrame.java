@@ -173,7 +173,7 @@ public class GameStartFrame extends Frame {
 				String solution = solver.getSolutionString();
 				System.out.println(solution);
 				
-				long sleepTime = 1000;
+				long sleepTime = 300;
 	
 				Queue<KeyboardEvent> moves = generateMoves(solution);
 				
