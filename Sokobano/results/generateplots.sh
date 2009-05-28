@@ -12,8 +12,9 @@ for i in $*; do
     echo set ylabel \"States\" >> $gpf
     echo set title \"$name\" >> $gpf
     echo set output \"${output}\" >> $gpf
-    #echo "plot \"$i\" using (\$1):(\$2>0 ? \$2 : 1/0) title \"BFSolver\" with lines lw 3, "\\>> $gpf
-    echo "plot \"$i\" using (\$1):(\$3>0 ? \$3 : 1/0) title \"A(i)\" with lines lw 3, " \\>> $gpf
+    echo plot \\ >> $gpf
+    echo "\"$i\" using (\$1):(\$2>0 ? \$2 : 1/0) title \"BFSolver\" with lines lw 3, "\\>> $gpf
+    echo "\"$i\" using (\$1):(\$3>0 ? \$3 : 1/0) title \"A(i)\" with lines lw 3, " \\>> $gpf
     echo "\"$i\" using (\$1):(\$4>0 ? \$4 : 1/0) title \"A(+{c,i})\" with lines lw 3, " \\>> $gpf
     echo "\"$i\" using (\$1):(\$5>0 ? \$5 : 1/0) title \"A(+{c,i,4})\" with lines lw 3, " \\>> $gpf
     echo "\"$i\" using (\$1):(\$6>0 ? \$6 : 1/0) title \"A(+{*{i,i},c,4})\" with lines lw 3, " \\>> $gpf
