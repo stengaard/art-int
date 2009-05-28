@@ -1,0 +1,41 @@
+\documentclass{beamer}%[notes=show]{beamer}
+ 
+\usepackage{ifpdf}
+\usepackage{tikz}
+\usetheme[pageofpages=of,% String used between the current page and the
+                         % total page count.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=img/logo_dtu,% Logo for the first page.
+          watermark=img/watermark_dtu,% Watermark used in every page.
+          watermarkheight=100px,% Height of the watermark.
+          watermarkheightmult=4,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{Torino}
+\usecolortheme{dtu}
+
+%\setbeameroption{hide notesN}
+%\setbeameroption{show notesI}
+%\setbeameroption{show notes on second screen=left}
+%\setbeameroption{second mode text on second screen}
+%\setbeamertemplate{note page}[compress] 
+
+%\hypersetup{pdfpagemode=FullScreen}
+
+\author{\textcopyright 2009:\\ Henrik Mygind \\Brian Stengaard}
+\title{Automated Planning}
+\subtitle{Solving Sokoban}
+\institute{Artificial Intelligence, IMM}
+\date{May 29th, 2009}
+
+% The log drawn in the upper right corner.
+\logo{\includegraphics[height=0.125\paperheight]{img/logo_dtu}}
+
+\bibliographystyle{unsrturl}
+
+\begin{document}
+\AtBeginNote{
+\scriptsize
+}
+\include{exam-content}
+\end{document}
+
